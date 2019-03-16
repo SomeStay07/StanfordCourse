@@ -14,10 +14,17 @@ class ViewController: UIViewController {
     lazy var game = Concentration(numbersOfPairsOfCards: (cardButtons.count + 1) / 2)
     // счётчик нажатия
     var flipCount = 0 { didSet { flipCountLabel.text = "Flips: \(flipCount)" }}
+    var player: Player!
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
     
+    // тест игрока
+    override func viewDidLoad() {
+        player = Player(name: "Vasya")
+        player.complete(level: 1)
+        print("Самый последний доступный уровень сейчас равен \(LevelTracker.highestUnlockedLevel)")
+    }
     
     @IBAction func touchCard(_ sender: UIButton) {
         // нажатие +
