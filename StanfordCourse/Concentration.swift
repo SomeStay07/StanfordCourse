@@ -9,11 +9,11 @@
 import Foundation
 
 class Concentration {
+    // массив с картами
     var cards = [Card] ()
     
     var indexOfOneAndOnlyFaceUpCard: Int?
-    // нужно решить 3 вопроса
-    // 1) Карты не подняты, 2) Карта открыта и ищет соответствие 3) карты соответствуют друг другу
+    // метод выбора карты
     func chooseCard(at index: Int) {
         //  если поднята то опускаем
         if !cards[index].isMatched {
@@ -43,8 +43,7 @@ class Concentration {
             // другая копия карты, отличается от предыдущей копии
             cards += [card, card]
         }
-        // TODO: Домашнее задание - замешать карты на разные позиции ( рядом стоящие карты равный на данный момент)
-        // домашнее задание выполнено!
+        // замешиваем карты
         cards.shuffle()
     }
 }

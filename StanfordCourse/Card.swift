@@ -18,13 +18,13 @@ struct Card {
     // переменная для уникальных карт
     static var identifierFactory = 0
     
-    // делаем метод для реализации уникальности карт
+    // Возвращает уникальное число для карты
     static func getUniqueIdentifier() -> Int {
         // вводим инкремент для различия карт по уникальности
         identifierFactory += 1
         return identifierFactory
     }
-    
+    // создает экземпляр с уникальным числом
     init() {
         self.identifier = Card.getUniqueIdentifier()
     }

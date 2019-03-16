@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         // нажатие +
         flipCount += 1
-        // пусть переменная будет = индексу массива и задействует метод
+        // переменная будет = индексу массива и задействует метод
         if let cardNumber = cardButtons.firstIndex(of: sender){
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
