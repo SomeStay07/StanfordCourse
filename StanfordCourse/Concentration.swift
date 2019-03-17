@@ -40,17 +40,30 @@ class Concentration {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards")
         //  если поднята то опускаем
         if !cards[index].isMatched {
+            flipCount += 1
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 // проверка на соответствие
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    // + очки
                 }
                 cards[index].isFaceUp = true
             } else {
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
+    }
+    
+    // новая игра
+    func resetGame() {
+        flipCount = 0
+        
+        for index in cards.indices {
+            cards[index].isFaceUp = false
+            cards[index].isMatched = false
+        }
+        cards.shuffle()
     }
     // инцилизатор для создания кол-ва карт
     init(numbersOfPairsOfCards: Int) {
