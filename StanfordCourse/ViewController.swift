@@ -11,7 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     // экземпляр класса, где количество кнопок div на 2 = числу пар
-    lazy var game = Concentration(numbersOfPairsOfCards: (cardButtons.count + 1) / 2)
+    lazy var game = Concentration(numbersOfPairsOfCards: numberOfPairsOfCards)
+    //
+    var numberOfPairsOfCards: Int {
+      return (cardButtons.count + 1) / 2
+    }
     // счётчик нажатия
     var flipCount = 0 { didSet { flipCountLabel.text = "Flips: \(flipCount)" }}
     

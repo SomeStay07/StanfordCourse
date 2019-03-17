@@ -12,7 +12,26 @@ class Concentration {
     // массив с картами
     var cards = [Card] ()
     
-    var indexOfOneAndOnlyFaceUpCard: Int?
+    var indexOfOneAndOnlyFaceUpCard: Int? {
+        get{
+            var foundIndex: Int?
+            for index in cards.indices {
+                if cards[index].isFaceUp {
+                    if foundIndex == nil {
+                        foundIndex = index
+                    } else {
+                        return nil
+                    }
+                }
+            }
+            return foundIndex
+        }
+        set {
+            for index in cards.indices {
+                cards[index].isFaceUp = (index == newValue)
+            }
+        }
+    }
     // метод выбора карты
     func chooseCard(at index: Int) {
         //  если поднята то опускаем
@@ -24,14 +43,9 @@ class Concentration {
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = nil
+            } else {
+                indexOfOneAndOnlyFaceUpCard = index
             }
-            // не подняты или 2 но не соответствуют
-            for flipDownIndex in cards.indices {
-                cards[flipDownIndex].isFaceUp = false
-            }
-            cards[index].isFaceUp = true
-            indexOfOneAndOnlyFaceUpCard = index
         }
     }
     // инцилизатор для создания кол-ва карт
