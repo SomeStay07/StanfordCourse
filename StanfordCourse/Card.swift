@@ -16,10 +16,10 @@ struct Card {
     // уникальность карт 
     var identifier: Int
     // переменная для уникальных карт
-    static var identifierFactory = 0
+    private static var identifierFactory = 0
     
     // Возвращает уникальное число для карты
-    static func getUniqueIdentifier() -> Int {
+    private static func getUniqueIdentifier() -> Int {
         // вводим инкремент для различия карт по уникальности
         identifierFactory += 1
         return identifierFactory

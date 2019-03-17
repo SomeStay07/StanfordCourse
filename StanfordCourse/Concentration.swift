@@ -10,9 +10,11 @@ import Foundation
 
 class Concentration {
     // массив с картами
-    var cards = [Card] ()
+    private(set) var cards = [Card] ()
+    // счетчик нажатий
+    private(set) var flipCount = 0
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get{
             var foundIndex: Int?
             for index in cards.indices {
@@ -34,6 +36,8 @@ class Concentration {
     }
     // метод выбора карты
     func chooseCard(at index: Int) {
+        // Проверяем на аргументы
+        assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards")
         //  если поднята то опускаем
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
@@ -50,6 +54,8 @@ class Concentration {
     }
     // инцилизатор для создания кол-ва карт
     init(numbersOfPairsOfCards: Int) {
+        // Проверяем на аргументы
+        assert(numbersOfPairsOfCards > 0, "Concentration.init(\(numbersOfPairsOfCards)): you must have at least one pair of cards")
         for _ in 1...numbersOfPairsOfCards {
             // создаем карту
             let card = Card()
