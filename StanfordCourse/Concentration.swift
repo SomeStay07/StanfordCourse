@@ -13,6 +13,13 @@ struct Concentration {
     private(set) var cards = [Card] ()
     // счетчик нажатий
     private(set) var flipCount = 0
+    private(set) var score = 0
+    private var seenCards: Set<Int> = []
+    
+    private struct Points {
+        static let matchBonus = 2
+        static let missMatchPenalty = 1
+    }
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get{
@@ -37,7 +44,17 @@ struct Concentration {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                     // + очки
+                    score += Points.matchBonus
+                } else {
+                if seenCards.contains(index) {
+                    score -= Points.missMatchPenalty
                 }
+                if seenCards.contains(matchIndex) {
+                    score -= Points.missMatchPenalty
+                }
+                seenCards.insert(index)
+                seenCards.insert(matchIndex)
+            }
                 cards[index].isFaceUp = true
             } else {
                 indexOfOneAndOnlyFaceUpCard = index
@@ -48,6 +65,8 @@ struct Concentration {
     // новая игра
     mutating func resetGame() {
         flipCount = 0
+        seenCards = []
+        score = 0
         for index in cards.indices {
             cards[index].isFaceUp = false
             cards[index].isMatched = false
