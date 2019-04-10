@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		985B97E6223BF2580015F3D6 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B97E5223BF2580015F3D6 /* Concentration.swift */; };
 		985B97E8223C040A0015F3D6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B97E7223C040A0015F3D6 /* Card.swift */; };
+		986EFE9E225DFB7100EECC84 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986EFE9D225DFB7100EECC84 /* GameTheme.swift */; };
 		98E66BD1223BDD5500251598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E66BD0223BDD5500251598 /* AppDelegate.swift */; };
 		98E66BD3223BDD5500251598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E66BD2223BDD5500251598 /* ViewController.swift */; };
 		98E66BD6223BDD5500251598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E66BD4223BDD5500251598 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		985B97E5223BF2580015F3D6 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		985B97E7223C040A0015F3D6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		986EFE9D225DFB7100EECC84 /* GameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTheme.swift; sourceTree = "<group>"; };
 		98E66BCD223BDD5500251598 /* StanfordCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanfordCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E66BD0223BDD5500251598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98E66BD2223BDD5500251598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		986EFE96225CDD5A00EECC84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				985B97E7223C040A0015F3D6 /* Card.swift */,
+				986EFE9D225DFB7100EECC84 /* GameTheme.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		986EFE99225CDD7700EECC84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98E66BD2223BDD5500251598 /* ViewController.swift */,
+				98E66BD4223BDD5500251598 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		986EFE9A225CDD7C00EECC84 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		98E66BC4223BDD5500251598 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +85,11 @@
 		98E66BCF223BDD5500251598 /* StanfordCourse */ = {
 			isa = PBXGroup;
 			children = (
+				986EFE96225CDD5A00EECC84 /* Model */,
+				986EFE99225CDD7700EECC84 /* View */,
+				986EFE9A225CDD7C00EECC84 /* Controller */,
 				98E66BD0223BDD5500251598 /* AppDelegate.swift */,
-				98E66BD2223BDD5500251598 /* ViewController.swift */,
-				98E66BD4223BDD5500251598 /* Main.storyboard */,
 				985B97E5223BF2580015F3D6 /* Concentration.swift */,
-				985B97E7223C040A0015F3D6 /* Card.swift */,
 				98E66BD7223BDD5800251598 /* Assets.xcassets */,
 				98E66BD9223BDD5800251598 /* LaunchScreen.storyboard */,
 				98E66BDC223BDD5800251598 /* Info.plist */,
@@ -142,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E66BD3223BDD5500251598 /* ViewController.swift in Sources */,
+				986EFE9E225DFB7100EECC84 /* GameTheme.swift in Sources */,
 				98E66BD1223BDD5500251598 /* AppDelegate.swift in Sources */,
 				985B97E6223BF2580015F3D6 /* Concentration.swift in Sources */,
 				985B97E8223C040A0015F3D6 /* Card.swift in Sources */,

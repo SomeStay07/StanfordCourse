@@ -46,15 +46,15 @@ struct Concentration {
                     // + очки
                     score += Points.matchBonus
                 } else {
-                if seenCards.contains(index) {
-                    score -= Points.missMatchPenalty
+                    if seenCards.contains(index) {
+                        score -= Points.missMatchPenalty
+                    }
+                    if seenCards.contains(matchIndex) {
+                        score -= Points.missMatchPenalty
+                    }
+                    seenCards.insert(index)
+                    seenCards.insert(matchIndex)
                 }
-                if seenCards.contains(matchIndex) {
-                    score -= Points.missMatchPenalty
-                }
-                seenCards.insert(index)
-                seenCards.insert(matchIndex)
-            }
                 cards[index].isFaceUp = true
             } else {
                 indexOfOneAndOnlyFaceUpCard = index
